@@ -29,3 +29,10 @@ body {
     transition: ease 0.25s;
 }
 
+.empty {
+    background-color: black;
+    width: 96px;
+    height: 96px;
+    position: absolute;
+}
+
