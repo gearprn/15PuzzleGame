@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+}
+
+#controls, #game{
+    width: 400px;
+}
+
+#controls {
+    padding-top: 10px;
+    text-align: center;
+}
+
+#game {
+    font-size: 32px;
+    height: 400px;
+    padding: 0px;
+    position: relative;
+}
+
+.tile {
+    background-color: hsl(180, 66%, 33%);
+    height: 96px;
+    line-height: 96px;
+    position: absolute;
+    text-align: center;
+    vertical-align: middle;
+    width: 96px;
+    transition: ease 0.25s;
+}
+
