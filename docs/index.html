@@ -2,10 +2,15 @@
 <html>
 <head>
     <title>MY Game!</title>
+    <meta charset=utf-8>
+    <meta name=description content="">
+    <meta name=viewport content="width=500, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <script type="text/javascript" src="script.js"></script>
+    <script src="script.js"></script>
+    <h1>15 PUZZLE THE GAME</h1>
+    <h2>Time selected or maybe player name</h2>
     <div id="game">
         <div>1</div>
         <div>2</div>
@@ -23,9 +28,14 @@
         <div>14</div>
         <div>15</div>
     </div>
+    <h2>Time left</h2>
+    <h3>Hint:</h3>
+    <div class="quotes">
+        <p><b>Note: </b>When I’m done, half of humanity will still exist. Perfectly balanced, as all things should be. I hope they remember you.</p>
+    </div>
     <div id="controls">
-        <button id="shufflebutton" onclick="shuffle()">Shuffle</button>
-        <button id="reset" onclick="reset()">Reset</button>
+        <button id="shufflebutton" class="box" onclick="shuffle()">Shuffle</button>
+        <button id="reset" class="box2" onclick="reset()">Reset</button>
     </div>
 </body>
 </html>
