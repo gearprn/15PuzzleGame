@@ -1,139 +1,193 @@
+/*.
+==========================
+        BODY, TILE
+==========================
+.*/
+
 @import url('https://fonts.googleapis.com/css?family=Orbitron');
-        body {
-            font-family: 'Orbitron', sans-serif;
-            margin: 0;
-            background-image: url("galaxy.jpg");
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
-        h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2em;
-            text-align: center;
-            flex-wrap: nowrap;
-            font-weight: bold;
-            text-transform: uppercase;
-            color: white;
-            text-shadow: 13px 12px 30px  #e5e5e0 ;
-        }
+body {
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+    background-image: url("galaxy.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2em;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    text-shadow: 13px 12px 30px  #e5e5e0;
+}
 
-        h2 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.25em;
-            text-align: center;
-            flex-wrap: nowrap;
-            font-weight: bold;
-            text-transform: uppercase;
-            color: white;
-        }
+h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1em;
+    text-align: center;
+    color: white;
+}
 
-        h3 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1em;
-            text-align: center;
-            flex-wrap: nowrap;
-            font-weight: bold;
-            text-transform: uppercase;
-            color: white;
-        }
+h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1em;
+    text-align: center;
+    flex-wrap: nowrap;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+}
 
-        .box {
-            font-family: 'Orbitron', sans-serif;
-            border-radius: 8px;
-            background-color: #001d79;
-            border: none;
-            color: white;
-            padding: 16px 32px;
-            text-align: center;
-            font-size: 16px;
-            margin: 4px 2px;
-            opacity: 0.6;
-            transition: 0.3s;
-            display: inline-block;
-            text-decoration: none;
-            cursor: pointer;
+.box {
+    font-family: 'Orbitron', sans-serif;
+    border-radius: 8px;
+    background-color: #001d79;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
 
-        }
+}
 
-        .box:hover {opacity: 1}
+.box:hover {
+    opacity: 1
+}
 
-        .box2 {
-            font-family: 'Orbitron', sans-serif;
-            border-radius: 8px;
-            background-color: #001d79;
-            border: none;
-            color: white;
-            padding: 16px 32px;
-            text-align: center;
-            font-size: 16px;
-            margin: 4px 2px;
-            opacity: 0.6;
-            transition: 0.3s;
-            display: inline-block;
-            text-decoration: none;
-            cursor: pointer;
-        }
+.box2 {
+    font-family: 'Orbitron', sans-serif;
+    border-radius: 8px;
+    background-color: #001d79;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+}
 
-        .box2:hover {opacity: 1}
+.box2:hover {opacity: 1}
 
-        #controls, #game{
-            width: 400px;
-        }
+#controls, #game{
+    width: 400px;
+}
 
-        #controls {
-            padding-top: 10px;
-            text-align: center;
-            margin:2em auto;
-            position: relative;
-            font-size: 20px;
-        }
+#controls {
+    padding-top: 10px;
+    text-align: center;
+    margin:2em auto;
+    position: relative;
+    font-size: 20px;
+}
 
-        #game {
-            display: block;
-            margin:2em auto;
-            font-size: 32px;
-            height: 400px;
-            width: 400px;
-            padding: 0px;
-            position: relative;
-            border-radius: 10px;
-        }
+#game {
+    display: block;
+    margin:2em auto;
+    font-size: 32px;
+    height: 400px;
+    width: 400px;
+    padding: 0px;
+    position: relative;
+    border-radius: 10px;
+}
 
 
-        .tile {
-            background-color: #f0a49f;
-            background-image: url("galaxy.jpg");
-            height: 96px;
-            line-height: 96px;
-            position: absolute;
-            text-align: center;
-            vertical-align: middle;
-            width: 96px;
-            transition: ease 0.25s;
-            color: white;
-            border-radius: 10px;
-            box-shadow: 0px 0px 35px hsla(180, 100%, 50%, 0.5);
-            transition: 1s;
-        }
+.tile {
+    background-color: #f0a49f;
+    background-image: url("galaxy.jpg");
+    height: 96px;
+    line-height: 96px;
+    position: absolute;
+    text-align: center;
+    vertical-align: middle;
+    width: 96px;
+    transition: ease 0.25s;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 35px hsla(180, 100%, 50%, 0.5);
+    transition: 0.5s;
+}
 
-        .tile:hover {
-            box-shadow: 0px 0px 100px hsla(180, 100%, 50%, 0.5);
-        }
+.tile:hover, #emptyTile:hover {
+    box-shadow: 0px 0px 100px hsla(180, 100%, 50%, 0.5);
+}
 
-        .empty {
-            background-color: black;
-            width: 96px;
-            height: 96px;
-            position: absolute;
-        }
+#emptyTile {
+    position: absolute;
+    border-radius: 10px;
+    width: 92px;
+    height: 92px;
+    background: transparent;
+    border: 2px solid hsla(180, 100%, 50%, 1);
+    box-shadow: 0px 0px 35px hsla(180, 100%, 50%, 0.5);
+    transition: 0.5s;
+}
 
-        .quotes {
-            margin: auto;
-            width: 60%;
-            border: 3px solid #51395b;
-            padding: 10px;
-            text-align: center;
-            color: white;
-            box-shadow: 0px 0px 35px hsla(180, 100%, 50%, 0.5);
-        }
+.quotes {
+    margin: auto;
+    width: 60%;
+    border: 3px solid #51395b;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    box-shadow: 0px 0px 35px hsla(180, 100%, 50%, 0.5);
+}
+/*.
+==========================
+       ENDGAMEPOPUP
+==========================
+.*/
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    /*background-color: rgb(0,0,0);*/ /* Fallback color */
+    background-color: rgba(255,255,255,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: rgb(0,0,0);
+    color: white;
+    margin: 20% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 400px; /* Could be more or less, depending on screen size */
+    border-radius: 10px;
+}
+.modal-content > p {
+    text-align: center;
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
