@@ -2,9 +2,42 @@
 var tile;
 var empty_x;
 var empty_y;
+var countMove = 0;
+
+/*
+==========================
+      STARTGAMEPOPUP
+==========================
+*/
+
+function closeStart() {
+    document.getElementById('myModalStart').style.display = "none";
+    shuffle();
+    var countDownDate = new Date().getTime();
+    start(countDownDate);
+}
+
+/*
+==========================
+      ENDGAMEPOPUP
+==========================
+*/
+
+function closeEnd() {
+    document.getElementById('myModalEnd').style.display = "none";
+    shuffle();
+    var countDownDate = new Date().getTime();
+    start(countDownDate);
+}
+
+/*
+==========================
+         MAINGAME
+==========================
+*/
 
 window.onload = function () {
-    console.log('Loaded!');
+
     var board = document.getElementById('game');
     tile = board.getElementsByTagName('div');
 
@@ -19,21 +52,26 @@ window.onload = function () {
             tile[i].style.left = (i%4*100)+'px';
             tile[i].style.top = (parseInt(i/4)*100) + 'px';
         }
+    }
+}
 
+function start(countDownDate) {
+    var board = document.getElementById('game');
+    tile = board.getElementsByTagName('div');
+
+    for (var i = 0; i < 16; i++) {
         tile[i].onclick = function() {
             if (this.innerHTML == "") {
-                console.log("you click on empty tile")
+                console.log("You click on empty tile")
             }
             else {
-                console.log("click on tile", this.innerHTML);
-                checkMove(this.innerHTML-1);
+                checkMove(this.innerHTML-1, countDownDate);
             }
         }
     }
-    console.log('Set all position!');
 }
 
-function checkMove(position) {
+function checkMove(position, countDownDate) {
 
     var board = document.getElementById('game');
     tile = board.getElementsByTagName('div');
@@ -45,24 +83,24 @@ function checkMove(position) {
     empty_y = parseInt(document.getElementById('emptyTile').style.top);
 
     if (empty_x - 100 == tempLeft && empty_y == tempTop) {
-            swap(empty_x, empty_y, tempLeft, tempTop, position);
+            swap(empty_x, empty_y, tempLeft, tempTop, position, countDownDate);
             empty_x -= 100;
     }
     else if (empty_x + 100 == tempLeft && empty_y == tempTop) {
-        swap(empty_x, empty_y, tempLeft, tempTop, position);
+        swap(empty_x, empty_y, tempLeft, tempTop, position, countDownDate);
         empty_x += 100;
     }
     else if (empty_y - 100 == tempTop && empty_x == tempLeft) {
-        swap(empty_x, empty_y, tempLeft, tempTop, position);
+        swap(empty_x, empty_y, tempLeft, tempTop, position, countDownDate);
         empty_y -= 100;
     }
     else if (empty_y + 100 == tempTop && empty_x == tempLeft) {
-        swap(empty_x, empty_y, tempLeft, tempTop, position);
+        swap(empty_x, empty_y, tempLeft, tempTop, position, countDownDate);
         empty_y += 100;
     }
 }
 
-function swap(empty_x, empty_y, left, top, position) {
+function swap(empty_x, empty_y, left, top, position, countDownDate) {
     var tempTop = top;
     var tempLeft = left;
 
@@ -72,10 +110,18 @@ function swap(empty_x, empty_y, left, top, position) {
     document.getElementById('emptyTile').style.top = tempTop+'px';
     document.getElementById('emptyTile').style.left = tempLeft+'px';
 
-    checkWin();
+    playsound();
+
+    countMove++;
+
+    checkWin(countDownDate);
 }
 
-function checkWin() {
+function playsound() {
+    // play sound something!
+}
+
+function checkWin(countDownDate) {
 
     var board = document.getElementById('game');
     tile = board.getElementsByTagName('div');
@@ -90,37 +136,37 @@ function checkWin() {
         }
     }
     if (check) {
-        console.log("you win!");
-        alertWin();
-    }
-    else {
-        console.log("all tile isn't it's position, Not win yet!");
+        alertWin(countDownDate);
     }
 }
 
-function alertWin() {
-    // Get the modal
-    var modal = document.getElementById('myModal');
+function alertWin(countDownDate) {
 
-    // Get the button that opens the modal
-    var btn = document.getElementById("myBtn");
+    var now = new Date().getTime();
 
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
+    var distance = now - countDownDate;
+
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    var modal = document.getElementById('myModalEnd');
     modal.style.display = "block";
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
-        modal.style.display = "none";
-    }
 
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
+    var text = document.getElementById('alertWin');
+
+    text.innerHTML = "Congratulation, You Won 15 Puzzle The Game! With total of " + countMove + " moves! With total time of " + minutes + " minutes " + seconds + " seconds";
+    countMove = 0;
 }
 
+/*
+==========================
+       Etcetera
+==========================
+*/
+
+// shuffle while start game
 function shuffle() {
     reset();
     var board = document.getElementById('game');
@@ -141,9 +187,9 @@ function shuffle() {
         tile[posi_b].style.top = top_a;
         tile[posi_b].style.left = left_a;
     }
-    console.log("Done all shuffle!");
 }
 
+// for reset position while coding game
 function reset() {
 
     var board = document.getElementById('game');
@@ -153,7 +199,6 @@ function reset() {
         tile[i].style.left = (i%4*100)+'px';
         tile[i].style.top = (parseInt(i/4)*100) + 'px';
     }
-    console.log('Reset position!...... Done!');
 }
 
 // for check position only!
