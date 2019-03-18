@@ -150,6 +150,11 @@ h3 {
     box-shadow: 0px 0px 35px hsla(180, 100%, 50%, 0.5);
 }
 
+audio {
+    position: fixed;
+    visibility: hidden;
+}
+
 /*.
 ==========================
       STARTGAMEPOPUP
