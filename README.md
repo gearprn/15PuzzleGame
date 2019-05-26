@@ -8,6 +8,6 @@
 + Cascading Style Sheets
 + JavaScript
 ## Interface
-[](img/interface_1.png)  
-[](img/interface_2.png)  
-[](img/interface_3.png)  
+![](img/interface_1.png)  
+![](img/interface_2.png)  
+![](img/interface_3.png)  
