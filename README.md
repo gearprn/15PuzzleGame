@@ -8,3 +8,6 @@
 + Cascading Style Sheets
 + JavaScript
 ## Interface
+(img/interface_1.jpg)  
+(img/interface_2.jpg)  
+(img/interface_3.jpg)  
